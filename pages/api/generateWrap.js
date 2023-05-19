@@ -1,4 +1,4 @@
-import generate from '@api/generate';
+import generate from '../../lib/generate';
 
 
 

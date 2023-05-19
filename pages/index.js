@@ -20,6 +20,8 @@ export default function Home() {
     const newDataJSON = await newData.json();
     newData = newDataJSON.result;
 
+    console.log(newData);
+
     const dataELArr = [];
 
     for (var i = 0; i < newData.length; i++) {
