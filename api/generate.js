@@ -22,26 +22,20 @@ await page.goto('https://github.com')
 }
 
 
-
-
-export default async function handler(req, res) {
+export default async function generate(data) {
   try {
-
-    const data = req.body;
 
     const imageURls = await fetchData(data)
   
-    res.status(200).json({
-      result: [imageURls],
-    })
-
+    return imageURls;
     
-
   } catch (e) {
-    res.status(500).json({
-      result: 'Error. Could not generate a poem.'
-    })
+    return 'Error'
   }
 
 
 }
+
+
+
+

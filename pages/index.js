@@ -2,7 +2,6 @@ import {
   useState
 } from 'react';
 
-  
 
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
 
   const handleClick = async () => {
 
-    var newData = await fetch('/api/generate', {
+    var newData = await fetch('/api/generateWrap', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
