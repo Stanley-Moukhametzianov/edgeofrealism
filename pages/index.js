@@ -10,7 +10,7 @@ export default function Home() {
 
   const handleClick = async () => {
 
-    var newData = await fetch('/api/generateWrap', {
+    var newData = await fetch('/api/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
