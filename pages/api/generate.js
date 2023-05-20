@@ -7,7 +7,11 @@ const LOCAL_CHROME_EXECUTABLE = '/Applications/Google Chrome.app/Contents/MacOS/
 
 const fetchData = async (searchTerm) => {
 
+    try {
+
   const executablePath = await edgeChromium.executablePath || LOCAL_CHROME_EXECUTABLE
+
+  console.log('1');
 
   const browser = await puppeteer.launch({
     executablePath,
@@ -15,10 +19,17 @@ const fetchData = async (searchTerm) => {
     headless: false,
   })
 
+  console.log('2');
+
   const page = await browser.newPage()
   await page.goto('https://github.com')
 
-  await browser.close();
+      await browser.close();
+      
+
+    } catch (e) {
+      console.log(e);
+    }
 
   return 'Done';
 }
